@@ -652,8 +652,8 @@ const forms = document.querySelectorAll('form');
         });
     }
 
-    setActiveClass ('#gender', 'calculating__choose-item_active');
-    setActiveClass ('.calculating__choose_big', 'calculating__choose-item_active');
+    setActiveClass ('#gender div', 'calculating__choose-item_active');
+    setActiveClass ('.calculating__choose_big div', 'calculating__choose-item_active');
 
     function caclTotal(){
         if(!sex || !height || !weight || !age || !ratio){
@@ -670,8 +670,8 @@ const forms = document.querySelectorAll('form');
 
     caclTotal();
     
-    function getStaticInformation (parentSelector, activeClass) {
-        const elements = document.querySelectorAll(`${parentSelector} div`);
+    function getStaticInformation (selector, activeClass) {
+        const elements = document.querySelectorAll(selector);
 
         elements.forEach( elem => {
             elem.addEventListener('click', (e) => {
@@ -694,8 +694,8 @@ const forms = document.querySelectorAll('form');
         });
     }
 
-    getStaticInformation('#gender', 'calculating__choose-item_active');
-    getStaticInformation('.calculating__choose_big', 'calculating__choose-item_active');
+    getStaticInformation('#gender div', 'calculating__choose-item_active');
+    getStaticInformation('.calculating__choose_big div', 'calculating__choose-item_active');
 
     function getDynamicInformation (selector){
 
